@@ -7,43 +7,97 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
     <style>
+      :root {
+        /* Default Dark Theme (Dusky/Dawn) */
+        --bg-main: #1a1918;
+        --bg-card: #232220;
+        --text-main: #e8e6e3;
+        --text-muted: #999590;
+        --accent-primary: #b84838;   /* Red/Rust */
+        --accent-secondary: #e6a85c; /* Amber/Gold */
+        --border-main: #4a4845;
+        --shadow-color: rgba(0,0,0,0.5);
+      }
+
+      body.light-mode {
+        /* Light Theme (Retro Paper) */
+        --bg-main: #f0ebe5;
+        --bg-card: #e6e1da;
+        --text-main: #2b2a28;
+        --text-muted: #66635f;
+        --accent-primary: #c94b3b;   /* Brighter Red */
+        --accent-secondary: #d98c38; /* Burnt Orange */
+        --border-main: #b8b5b0;
+        --shadow-color: rgba(43, 42, 40, 0.15);
+      }
+
       body {
         font-family: 'Cormorant Garamond', serif;
-        background-color: #FDFBF7;
-        color: #1c1c1c;
+        background-color: var(--bg-main);
+        color: var(--text-main);
+        transition: background-color 0.3s ease, color 0.3s ease;
       }
       .font-mono {
         font-family: 'Space Mono', monospace;
       }
-      /* Custom Scrollbar for Retro Feel */
+      .font-pixel {
+        font-family: 'VT323', monospace;
+      }
+      /* Custom Scrollbar */
       ::-webkit-scrollbar {
         width: 12px;
+        background: var(--bg-main);
       }
       ::-webkit-scrollbar-track {
-        background: #FDFBF7;
-        border-left: 1px solid #1c1c1c;
+        background: var(--bg-main);
+        border-left: 1px solid var(--border-main);
       }
       ::-webkit-scrollbar-thumb {
-        background: #B44C43;
-        border: 1px solid #1c1c1c;
+        background: var(--accent-primary);
+        border: 1px solid var(--bg-main);
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #8e3b33;
+        background: var(--accent-secondary);
       }
       
       /* Markdown Specific Overrides */
       .prose blockquote {
         font-style: italic;
-        border-left-color: #B44C43;
-        background: #F2EFE9;
+        border-left-color: var(--accent-primary);
+        background: var(--bg-card);
+        color: var(--text-main);
         padding: 1rem;
       }
       .prose pre {
-        background-color: #1c1c1c;
-        border: 1px solid #333;
+        background-color: #111;
+        border: 1px solid var(--border-main);
+      }
+      body.light-mode .prose pre {
+        background-color: #2b2a28; /* Dark code blocks even in light mode for contrast */
+        color: #e8e6e3;
+      }
+      
+      /* CRT Scanline Effect - Subtle overlay */
+      .scanlines {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+        z-index: 9999;
+        background: linear-gradient(
+          to bottom,
+          rgba(255,255,255,0),
+          rgba(255,255,255,0) 50%,
+          rgba(0,0,0,0.05) 50%,
+          rgba(0,0,0,0.05)
+        );
+        background-size: 100% 4px;
+        opacity: 0.15;
       }
     </style>
   <script type="importmap">
@@ -65,7 +119,7 @@
 </script>
 </head>
   <body>
+    <div class="scanlines"></div>
     <div id="root"></div>
-    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
