@@ -24,9 +24,12 @@ View your app in AI Studio: https://ai.studio/apps/drive/1-DelNuyw7XI8k4IySVv_Ma
 This project is configured to automatically deploy to GitHub Pages when you push to the `main` branch.
 
 **Setup GitHub Pages:**
-1. Go to your repository Settings > Pages
-2. Under "Build and deployment", select "GitHub Actions" as the source
-3. Push your changes to the `main` branch
-4. The site will be automatically built and deployed
+1. Ensure the repository is named `prachalabsai.github.io` under the `prachalabsai` organization or user account
+2. Go to your repository Settings > Pages
+3. Under "Build and deployment", select "GitHub Actions" as the source
+4. Push your changes to the `main` branch
+5. The site will be automatically built and deployed
 
-**Live Site:** The app will be available at `https://prabakaranc98.github.io/prachalabsai/`
+**Live Site:** The app will be available at `https://prachalabsai.github.io/`
+
+**Note:** For this to work as a root GitHub Pages site, the repository must be named `prachalabsai.github.io`
