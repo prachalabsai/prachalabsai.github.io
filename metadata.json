@@ -1,0 +1,7 @@
+{
+  "name": "PrachaLabs.ai",
+  "description": "An independent research laboratory at the intersection of design, research, and engineering. Exploring human-AI ecosystems.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
