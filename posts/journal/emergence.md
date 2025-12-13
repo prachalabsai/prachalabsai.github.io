@@ -1,7 +1,9 @@
 ---
-title: Log 001: Emergence
+title: "Log 001: Emergence"
 date: Jan 24, 2025
-tags: [Philosophy, Lab Note]
+tags:
+  - Philosophy
+  - Lab Note
 excerpt: Initial thoughts on setting up a feedback loop between human intuition and machine rigor.
 ---
 
@@ -27,5 +29,5 @@ $$
 T_{human}(x) = f(x; \theta) + \epsilon(t)
 $$
 
-*   **Hypothesis**: Documentation is not a post-mortem; it is the heartbeat of the experiment.
-*   **Action**: Set up the trackers.
+* **Hypothesis**: Documentation is not a post-mortem; it is the heartbeat of the experiment.
+* **Action**: Set up the trackers.
