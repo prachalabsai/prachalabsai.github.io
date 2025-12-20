@@ -73,18 +73,34 @@ export const EXPERIMENTS: Experiment[] = [
 export const TOOLS: Tool[] = [
   {
     id: 'tool-001',
-    title: 'Idea Weaver',
-    description: 'A spatial canvas for non-linear thinking. It uses embedding clusters to help you weave connections between scattered notes and ideas.',
-    url: 'https://github.com/prachalabs', 
-    tags: ['Design', 'Thinking', 'Canvas'],
+    title: 'Rewire',
+    description: 'Year-end reflection, reimagined as a gentle experiment. Not to dwell on the past, but to design a better next time.',
+    url: 'https://rewire.prachalabs.com/',
+    tags: ['Reflection', 'Counterfactual', 'Planning'],
     status: 'Beta'
   },
   {
     id: 'tool-002',
-    title: 'Zen Reader',
-    description: 'An AI-wrapper that strips cognitive load from dense academic papers, presenting them as Socratic dialogues.',
-    url: 'https://github.com/prachalabs',
-    tags: ['Reading', 'Accessibility'],
+    title: 'BoundedAgents',
+    description: 'Know your customer instantly. Enter any company website URL and generate data-driven customer personas using AI.',
+    url: 'https://boundedagents-915250653588.us-west1.run.app/',
+    tags: ['Analysis', 'Customer', 'Personas'],
+    status: 'Alpha'
+  },
+  {
+    id: 'tool-003',
+    title: 'Holiday Bento',
+    description: 'A warm recommender system for course planning. Prepare your feast - balanced like a perfect Thanksgiving plate.',
+    url: 'https://bentocourse-elective-balancer-915250653588.us-west1.run.app/',
+    tags: ['Education', 'Planning', 'Courses'],
+    status: 'Beta'
+  },
+  {
+    id: 'tool-004',
+    title: 'CooC',
+    description: 'Connected Universes - an omni-view projection tool for exploring and initializing interconnected knowledge domains.',
+    url: 'https://nexus-connected-universes-569697114100.us-west1.run.app/',
+    tags: ['Exploration', 'Knowledge', 'Visualization'],
     status: 'Alpha'
   }
 ];
