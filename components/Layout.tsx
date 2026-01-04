@@ -9,8 +9,8 @@ const NavItem = ({ to, icon: Icon, label, onClick }: { to: string; icon: any; la
     onClick={onClick}
     className={({ isActive }) =>
       `flex items-center gap-2 px-4 py-2 font-pixel text-lg uppercase tracking-wider transition-colors duration-200 
-      ${isActive 
-        ? 'text-[var(--accent-secondary)] border-b-2 border-[var(--accent-secondary)]' 
+      ${isActive
+        ? 'text-[var(--accent-secondary)] border-b-2 border-[var(--accent-secondary)]'
         : 'text-[var(--text-muted)] hover:text-[var(--text-main)] hover:border-b-2 hover:border-[var(--border-main)]'}`
     }
   >
@@ -60,12 +60,11 @@ export const Layout: React.FC = () => {
             {/* Desktop Nav */}
             <div className="hidden md:flex items-center space-x-2">
               <NavItem to="/" icon={Fingerprint} label="Manifesto" />
-              <NavItem to="/journal" icon={Book} label="Journal" />
               <NavItem to="/tracker" icon={FlaskConical} label="Tracker" />
               <NavItem to="/articles" icon={FileText} label="Articles" />
               <NavItem to="/tools" icon={Wrench} label="Tools" />
-              
-              <button 
+
+              <button
                 onClick={toggleTheme}
                 className="ml-4 p-2 text-[var(--text-muted)] hover:text-[var(--accent-secondary)] transition-colors"
                 title="Toggle Light Switch"
@@ -76,14 +75,14 @@ export const Layout: React.FC = () => {
 
             {/* Mobile Menu Button */}
             <div className="flex items-center gap-4 md:hidden">
-              <button 
+              <button
                 onClick={toggleTheme}
                 className="p-2 text-[var(--text-muted)] hover:text-[var(--accent-secondary)] transition-colors"
               >
                 {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
               </button>
-              
-              <button 
+
+              <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="p-2 border border-[var(--border-main)] text-[var(--text-main)] shadow-[2px_2px_0px_0px_var(--shadow-color)] active:shadow-none active:translate-y-0.5 transition-all"
               >
@@ -98,7 +97,6 @@ export const Layout: React.FC = () => {
           <div className="md:hidden border-t border-[var(--border-main)] bg-[var(--bg-card)]">
             <div className="flex flex-col p-4 space-y-2">
               <NavItem to="/" icon={Fingerprint} label="Manifesto" onClick={() => setIsMenuOpen(false)} />
-              <NavItem to="/journal" icon={Book} label="Journal" onClick={() => setIsMenuOpen(false)} />
               <NavItem to="/tracker" icon={FlaskConical} label="Tracker" onClick={() => setIsMenuOpen(false)} />
               <NavItem to="/articles" icon={FileText} label="Articles" onClick={() => setIsMenuOpen(false)} />
               <NavItem to="/tools" icon={Wrench} label="Tools" onClick={() => setIsMenuOpen(false)} />
@@ -112,7 +110,7 @@ export const Layout: React.FC = () => {
         {/* Decorative Grid Lines */}
         <div className="absolute top-0 left-8 w-px h-full border-l border-dashed border-[var(--border-main)] opacity-20 pointer-events-none hidden md:block"></div>
         <div className="absolute top-0 right-8 w-px h-full border-l border-dashed border-[var(--border-main)] opacity-20 pointer-events-none hidden md:block"></div>
-        
+
         <Outlet />
       </main>
 
@@ -124,11 +122,11 @@ export const Layout: React.FC = () => {
               <h3 className="font-pixel text-2xl text-[var(--text-main)]">PrachaLabs</h3>
               <p className="font-mono text-xs text-[var(--text-muted)] mt-1">Expression of Thoughts • Est. 2025</p>
             </div>
-            
+
             <div className="flex gap-4">
-               <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-[var(--accent-primary)] hover:text-[var(--bg-main)] border border-[var(--border-main)] hover:border-[var(--accent-primary)] transition-colors">
-                 <Github size={20} />
-               </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-[var(--accent-primary)] hover:text-[var(--bg-main)] border border-[var(--border-main)] hover:border-[var(--accent-primary)] transition-colors">
+                <Github size={20} />
+              </a>
             </div>
 
             <div className="text-center md:text-right font-mono text-xs text-[var(--text-muted)]">
