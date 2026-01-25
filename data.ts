@@ -33,9 +33,9 @@ export const EXPERIMENTS: Experiment[] = [
     description: 'Visualizing the "thought process" of LLMs using dynamic graph generation.',
     hypothesis: 'Mapping semantic drift in long-context reasoning reveals a fractal structure similar to human biological memory consolidation.',
     metrics: [
-        { label: 'Context Win', value: '128k' },
-        { label: 'Nodes', value: '14k' },
-        { label: 'Drift', value: '-12%' }
+      { label: 'Context Win', value: '128k' },
+      { label: 'Nodes', value: '14k' },
+      { label: 'Drift', value: '-12%' }
     ],
     stack: ['Python', 'NetworkX', 'Gemini 1.5 Pro', 'React'],
     tags: ['NLP', 'Visualization', 'Interpretability']
@@ -48,8 +48,8 @@ export const EXPERIMENTS: Experiment[] = [
     description: 'A minimalist tool for converting unstructured audio ramblings into structured research hypotheses.',
     hypothesis: 'Unstructured audio capture reduces friction in hypothesis generation by 40% compared to text-first interfaces.',
     metrics: [
-        { label: 'Users', value: 'Alpha' },
-        { label: 'Latency', value: '200ms' }
+      { label: 'Users', value: 'Alpha' },
+      { label: 'Latency', value: '200ms' }
     ],
     stack: ['Whisper', 'FastAPI', 'Tailwind'],
     tags: ['Audio', 'Productivity', 'Tools']
@@ -62,7 +62,7 @@ export const EXPERIMENTS: Experiment[] = [
     description: 'Attempting to quantify "research taste" as an objective function in automated discovery systems.',
     hypothesis: 'Research "taste" is not subjective but a learnable high-dimensional manifold of historical citation graphs and novelty scores.',
     metrics: [
-        { label: 'Simulation', value: 'Pending' }
+      { label: 'Simulation', value: 'Pending' }
     ],
     stack: ['Pytorch', 'GraphRAG'],
     tags: ['Alignment', 'Theory']
@@ -102,5 +102,13 @@ export const TOOLS: Tool[] = [
     url: 'https://nexus-connected-universes-569697114100.us-west1.run.app/',
     tags: ['Exploration', 'Knowledge', 'Visualization'],
     status: 'Alpha'
+  },
+  {
+    id: 'tool-005',
+    title: 'Davos Decoded',
+    description: 'AI-powered exploration of World Economic Forum discussions. Decode the narratives, themes, and power dynamics shaping global policy.',
+    url: 'https://davos-decoded.prachalabs.com/',
+    tags: ['Policy', 'AI Analysis', 'Global Affairs'],
+    status: 'Beta'
   }
 ];
