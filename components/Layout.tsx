@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import { FlaskConical, Book, FileText, Fingerprint, Menu, X, Github, Wrench, Sun, Moon } from 'lucide-react';
+import { Fingerprint, Menu, X, Github, Wrench, Sun, Moon, BookOpen } from 'lucide-react';
 
 const NavItem = ({ to, icon: Icon, label, onClick }: { to: string; icon: any; label: string; onClick?: () => void }) => (
   <NavLink
@@ -60,8 +60,7 @@ export const Layout: React.FC = () => {
             {/* Desktop Nav */}
             <div className="hidden md:flex items-center space-x-2">
               <NavItem to="/" icon={Fingerprint} label="Manifesto" />
-              <NavItem to="/tracker" icon={FlaskConical} label="Tracker" />
-              <NavItem to="/articles" icon={FileText} label="Articles" />
+              <NavItem to="/synthesis" icon={BookOpen} label="Synthesis" />
               <NavItem to="/tools" icon={Wrench} label="Tools" />
 
               <button
@@ -97,8 +96,7 @@ export const Layout: React.FC = () => {
           <div className="md:hidden border-t border-[var(--border-main)] bg-[var(--bg-card)]">
             <div className="flex flex-col p-4 space-y-2">
               <NavItem to="/" icon={Fingerprint} label="Manifesto" onClick={() => setIsMenuOpen(false)} />
-              <NavItem to="/tracker" icon={FlaskConical} label="Tracker" onClick={() => setIsMenuOpen(false)} />
-              <NavItem to="/articles" icon={FileText} label="Articles" onClick={() => setIsMenuOpen(false)} />
+              <NavItem to="/synthesis" icon={BookOpen} label="Synthesis" onClick={() => setIsMenuOpen(false)} />
               <NavItem to="/tools" icon={Wrench} label="Tools" onClick={() => setIsMenuOpen(false)} />
             </div>
           </div>
