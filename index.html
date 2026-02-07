@@ -11,27 +11,25 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
     <style>
       :root {
-        /* Default Dark Theme (Dusky/Dawn) */
-        --bg-main: #1a1918;
-        --bg-card: #232220;
-        --text-main: #e8e6e3;
-        --text-muted: #999590;
-        --accent-primary: #b84838;   /* Red/Rust */
-        --accent-secondary: #e6a85c; /* Amber/Gold */
-        --border-main: #4a4845;
+        --bg-main: #0a0a0a;
+        --bg-card: #111111;
+        --text-main: #e0e0e0;
+        --text-muted: #666666;
+        --accent-primary: #ffffff;
+        --accent-secondary: #999999;
+        --border-main: #2a2a2a;
         --shadow-color: rgba(0,0,0,0.5);
       }
 
       body.light-mode {
-        /* Light Theme (Retro Paper) */
-        --bg-main: #f0ebe5;
-        --bg-card: #e6e1da;
-        --text-main: #2b2a28;
-        --text-muted: #66635f;
-        --accent-primary: #c94b3b;   /* Brighter Red */
-        --accent-secondary: #d98c38; /* Burnt Orange */
-        --border-main: #b8b5b0;
-        --shadow-color: rgba(43, 42, 40, 0.15);
+        --bg-main: #f5f5f5;
+        --bg-card: #ebebeb;
+        --text-main: #1a1a1a;
+        --text-muted: #777777;
+        --accent-primary: #000000;
+        --accent-secondary: #555555;
+        --border-main: #d0d0d0;
+        --shadow-color: rgba(0,0,0,0.08);
       }
 
       body {
@@ -48,56 +46,19 @@
       }
       /* Custom Scrollbar */
       ::-webkit-scrollbar {
-        width: 12px;
+        width: 6px;
         background: var(--bg-main);
-      }
-      ::-webkit-scrollbar-track {
-        background: var(--bg-main);
-        border-left: 1px solid var(--border-main);
       }
       ::-webkit-scrollbar-thumb {
-        background: var(--accent-primary);
-        border: 1px solid var(--bg-main);
+        background: var(--border-main);
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: var(--accent-secondary);
+        background: var(--text-muted);
       }
-      
-      /* Markdown Specific Overrides */
-      .prose blockquote {
-        font-style: italic;
-        border-left-color: var(--accent-primary);
-        background: var(--bg-card);
-        color: var(--text-main);
-        padding: 1rem;
-      }
-      .prose pre {
-        background-color: #111;
-        border: 1px solid var(--border-main);
-      }
-      body.light-mode .prose pre {
-        background-color: #2b2a28; /* Dark code blocks even in light mode for contrast */
-        color: #e8e6e3;
-      }
-      
-      /* CRT Scanline Effect - Subtle overlay */
-      .scanlines {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        pointer-events: none;
-        z-index: 9999;
-        background: linear-gradient(
-          to bottom,
-          rgba(255,255,255,0),
-          rgba(255,255,255,0) 50%,
-          rgba(0,0,0,0.05) 50%,
-          rgba(0,0,0,0.05)
-        );
-        background-size: 100% 4px;
-        opacity: 0.15;
+
+      ::selection {
+        background: #fff;
+        color: #000;
       }
     </style>
   <script type="importmap">
@@ -119,7 +80,6 @@
 </script>
 </head>
   <body>
-    <div class="scanlines"></div>
     <div id="root"></div>
       <script type="module" src="./index.tsx"></script>
   </body>
