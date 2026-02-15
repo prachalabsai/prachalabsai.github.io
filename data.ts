@@ -72,6 +72,14 @@ export const EXPERIMENTS: Experiment[] = [
 // 3. TOOLS / APPS (Design & Human Centered AI)
 export const TOOLS: Tool[] = [
   {
+    id: 'tool-006',
+    title: 'EchoLogic',
+    description: 'A simulation engine of the human mind and behavior.',
+    url: 'https://github.com/prabakaranc98/echologic',
+    tags: ['Simulation', 'Cognition', 'Behavior'],
+    status: 'Alpha'
+  },
+  {
     id: 'tool-001',
     title: 'Rewire',
     description: 'Year-end reflection, reimagined as a gentle experiment. Not to dwell on the past, but to design a better next time.',

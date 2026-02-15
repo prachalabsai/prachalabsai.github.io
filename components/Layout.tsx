@@ -46,7 +46,10 @@ export const Layout: React.FC = () => {
 
             {/* Desktop Nav */}
             <div className="hidden md:flex items-center gap-8">
+              <NavItem to="/canvas" label="Canvas" />
               <NavItem to="/tools" label="Tools" />
+              <NavItem to="/threads" label="Threads" />
+              <NavItem to="/pracha" label="Pracha" />
               <a
                 href="https://github.com/prachalabsai"
                 target="_blank"
@@ -84,7 +87,10 @@ export const Layout: React.FC = () => {
         {isMenuOpen && (
           <div className="md:hidden border-t border-[var(--border-main)]">
             <div className="max-w-2xl mx-auto px-6 py-4 flex flex-col gap-4">
+              <NavItem to="/canvas" label="Canvas" onClick={() => setIsMenuOpen(false)} />
               <NavItem to="/tools" label="Tools" onClick={() => setIsMenuOpen(false)} />
+              <NavItem to="/threads" label="Threads" onClick={() => setIsMenuOpen(false)} />
+              <NavItem to="/pracha" label="Pracha" onClick={() => setIsMenuOpen(false)} />
             </div>
           </div>
         )}
@@ -100,7 +106,7 @@ export const Layout: React.FC = () => {
         <div className="max-w-2xl mx-auto px-6 py-8">
           <div className="flex justify-between items-center">
             <span className="font-mono text-[10px] text-[var(--text-muted)]">
-              PrachaLabs &mdash; Applied Research
+              PrachaLabs &mdash; Applied Research &amp; Engineering
             </span>
             <span className="font-mono text-[10px] text-[var(--text-muted)]">
               Columbia University
