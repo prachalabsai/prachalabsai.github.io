@@ -5,7 +5,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const SITE = 'https://prachalabsai.github.io';
+const SITE = 'https://prachalabs.com';
 const TITLE = 'PrachaLabs — Downstream of Intelligence';
 const DESCRIPTION =
   'An independent lab. Intelligence is becoming abundant — the opportunity is not automating what we do, but discovering what we can now attempt.';
