@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Generated at build time
+public/feed.xml
+public/sitemap.xml

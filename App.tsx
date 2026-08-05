@@ -1,26 +1,42 @@
-
-import React from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { Home } from './pages/Home';
-import { Tools } from './pages/Tools';
-import { Canvas } from './pages/Canvas';
+import { Charter } from './pages/Charter';
+import { Writing } from './pages/Writing';
+import { Post } from './pages/Post';
+import { Work } from './pages/Work';
 import { Pracha } from './pages/Pracha';
-import { Threads } from './pages/Threads';
+import { NotFound } from './pages/NotFound';
+
+const ScrollToTop: React.FC = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
 
 const App: React.FC = () => {
   return (
-    <HashRouter>
+    <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="canvas" element={<Canvas />} />
-          <Route path="tools" element={<Tools />} />
-          <Route path="threads" element={<Threads />} />
+          <Route path="charter" element={<Charter />} />
+          <Route path="writing" element={<Writing />} />
+          <Route path="writing/:slug" element={<Post />} />
+          <Route path="work" element={<Work />} />
           <Route path="pracha" element={<Pracha />} />
+          {/* Legacy routes from the previous site */}
+          <Route path="tools" element={<Navigate to="/work" replace />} />
+          <Route path="canvas" element={<Navigate to="/charter" replace />} />
+          <Route path="threads" element={<Navigate to="/writing" replace />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 

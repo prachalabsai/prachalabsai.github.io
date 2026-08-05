@@ -1,86 +1,58 @@
-
-import { ContentItem } from '../types';
-
-interface ParsedMarkdown {
-  metadata: Partial<ContentItem>;
+export interface ParsedMarkdown {
+  metadata: Record<string, string | string[]>;
   content: string;
 }
 
-/**
- * Parses raw markdown file content to separate Frontmatter (YAML-like) from body.
- * 
- * Format expected:
- * ---
- * title: My Title
- * date: 2025-01-01
- * tags: [Tag1, Tag2]
- * excerpt: Short description
- * ---
- * 
- * # Content
- * ...
- */
-export const parseMarkdown = (text: string): ParsedMarkdown => {
-  const frontmatterRegex = /^---\s*([\s\S]*?)\s*---\s*([\s\S]*)$/;
-  const match = frontmatterRegex.exec(text);
-
-  if (!match) {
-    return {
-      metadata: {},
-      content: text
-    };
+const stripQuotes = (s: string): string => {
+  const t = s.trim();
+  if ((t.startsWith('"') && t.endsWith('"')) || (t.startsWith("'") && t.endsWith("'"))) {
+    return t.slice(1, -1);
   }
-
-  const metadataBlock = match[1];
-  const content = match[2];
-  const metadata: any = {};
-
-  metadataBlock.split('\n').forEach(line => {
-    const [key, ...valueParts] = line.split(':');
-    if (key && valueParts.length > 0) {
-      const value = valueParts.join(':').trim();
-      
-      // Handle array format [Tag1, Tag2]
-      if (value.startsWith('[') && value.endsWith(']')) {
-        metadata[key.trim()] = value
-          .slice(1, -1)
-          .split(',')
-          .map(s => s.trim());
-      } else {
-        metadata[key.trim()] = value;
-      }
-    }
-  });
-
-  return { metadata, content };
+  return t;
 };
 
-export const fetchContent = async (path: string, id: string): Promise<ContentItem> => {
-  try {
-    const response = await fetch(path);
-    if (!response.ok) throw new Error(`Failed to load post: ${path}`);
-    const text = await response.text();
-    const { metadata, content } = parseMarkdown(text);
+/**
+ * Separates frontmatter from body. Supported value forms:
+ *   key: plain value
+ *   key: "quoted value"
+ *   key: [item, "quoted item", 2]
+ */
+export const parseMarkdown = (text: string): ParsedMarkdown => {
+  const match = /^---\s*([\s\S]*?)\s*---\s*([\s\S]*)$/.exec(text.replace(/\r\n/g, '\n'));
 
-    return {
-      id,
-      slug: path.split('/').pop()?.replace('.md', '') || id,
-      title: metadata.title || 'Untitled',
-      date: metadata.date || 'Undated',
-      tags: metadata.tags || [],
-      excerpt: metadata.excerpt || '',
-      content: content
-    } as ContentItem;
-  } catch (error) {
-    console.error(error);
-    return {
-      id,
-      slug: 'error',
-      title: 'Error Loading Content',
-      date: 'N/A',
-      tags: [],
-      excerpt: 'Could not load content.',
-      content: 'Error loading content. Please check the file path.'
-    };
+  if (!match) {
+    return { metadata: {}, content: text };
   }
+
+  const metadata: Record<string, string | string[]> = {};
+  for (const line of match[1].split('\n')) {
+    const idx = line.indexOf(':');
+    if (idx === -1) continue;
+    const key = line.slice(0, idx).trim();
+    const value = line.slice(idx + 1).trim();
+    if (!key || !value) continue;
+
+    if (value.startsWith('[') && value.endsWith(']')) {
+      metadata[key] = value
+        .slice(1, -1)
+        .split(',')
+        .map(stripQuotes)
+        .filter(Boolean);
+    } else {
+      metadata[key] = stripQuotes(value);
+    }
+  }
+
+  return { metadata, content: match[2] };
+};
+
+/** Formats an ISO date (2026-08-03) for display without UTC off-by-one drift. */
+export const formatDate = (iso: string): string => {
+  const parts = iso.split('-').map(Number);
+  const date =
+    parts.length === 3 && !parts.some(isNaN)
+      ? new Date(parts[0], parts[1] - 1, parts[2])
+      : new Date(iso);
+  if (isNaN(date.getTime())) return iso;
+  return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 };

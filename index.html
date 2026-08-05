@@ -3,85 +3,87 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PrachaLabs.ai</title>
+    <title>PrachaLabs — Downstream of Intelligence</title>
+    <meta
+      name="description"
+      content="An independent lab. Intelligence is becoming abundant — the opportunity is not automating what we do, but discovering what we can now attempt."
+    />
+    <link rel="canonical" href="https://prachalabsai.github.io/" />
+    <meta property="og:title" content="PrachaLabs — Downstream of Intelligence" />
+    <meta
+      property="og:description"
+      content="An independent lab studying both directions: how frontier intelligence is made, and how people at every scale create real value with it."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://prachalabsai.github.io/" />
+    <meta property="og:image" content="https://prachalabsai.github.io/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://prachalabsai.github.io/og.png" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="PrachaLabs — Writing"
+      href="https://prachalabsai.github.io/feed.xml"
+    />
+    <meta name="theme-color" content="#0a0f10" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f7f6f1" media="(prefers-color-scheme: light)" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=VT323&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
-    <style>
-      :root {
-        --bg-main: #0a0a0a;
-        --bg-card: #111111;
-        --text-main: #e0e0e0;
-        --text-muted: #666666;
-        --accent-primary: #ffffff;
-        --accent-secondary: #999999;
-        --border-main: #2a2a2a;
-        --shadow-color: rgba(0,0,0,0.5);
-      }
-
-      body.light-mode {
-        --bg-main: #f5f5f5;
-        --bg-card: #ebebeb;
-        --text-main: #1a1a1a;
-        --text-muted: #777777;
-        --accent-primary: #000000;
-        --accent-secondary: #555555;
-        --border-main: #d0d0d0;
-        --shadow-color: rgba(0,0,0,0.08);
-      }
-
-      body {
-        font-family: 'Cormorant Garamond', serif;
-        background-color: var(--bg-main);
-        color: var(--text-main);
-        transition: background-color 0.3s ease, color 0.3s ease;
-      }
-      .font-mono {
-        font-family: 'Space Mono', monospace;
-      }
-      .font-pixel {
-        font-family: 'VT323', monospace;
-      }
-      /* Custom Scrollbar */
-      ::-webkit-scrollbar {
-        width: 6px;
-        background: var(--bg-main);
-      }
-      ::-webkit-scrollbar-thumb {
-        background: var(--border-main);
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: var(--text-muted);
-      }
-
-      ::selection {
-        background: #fff;
-        color: #000;
-      }
-    </style>
-  <script type="importmap">
-{
-  "imports": {
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
-    "react/": "https://aistudiocdn.com/react@^19.2.1/",
-    "react": "https://aistudiocdn.com/react@^19.2.1",
-    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.10.1",
-    "react-markdown": "https://aistudiocdn.com/react-markdown@^9.0.1",
-    "remark-math": "https://aistudiocdn.com/remark-math@^6.0.0",
-    "rehype-katex": "https://aistudiocdn.com/rehype-katex@^7.0.0",
-    "clsx": "https://aistudiocdn.com/clsx@^2.1.0",
-    "tailwind-merge": "https://aistudiocdn.com/tailwind-merge@^2.2.1"
-  }
-}
-</script>
-</head>
+    <script>
+      // Set theme before first paint. Explicit choice (toggle) wins; otherwise
+      // the hour decides: daytime reads on paper+teal, night on ink+teal.
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          var light;
+          if (t === 'light') light = true;
+          else if (t === 'dark') light = false;
+          else {
+            var h = new Date().getHours();
+            light = h >= 7 && h < 19;
+          }
+          if (light) document.documentElement.classList.add('light');
+        } catch (e) {}
+      })();
+    </script>
+    <script>
+      // GitHub Pages SPA fallback: decode the path 404.html encoded into the
+      // query string, and rewrite legacy #/route URLs from the HashRouter era.
+      (function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (s) {
+              return s.replace(/~and~/g, '&');
+            })
+            .join('?');
+          window.history.replaceState(null, '', l.pathname.slice(0, -1) + decoded + l.hash);
+        } else if (l.hash.slice(0, 2) === '#/') {
+          window.history.replaceState(null, '', l.hash.slice(1));
+        }
+      })(window.location);
+    </script>
+    <script>
+      // Google Analytics (GA4).
+      (function () {
+        var GA_ID = 'G-7665RVEEQF';
+        if (!GA_ID || GA_ID === 'G-XXXXXXXXXX') return;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', GA_ID);
+      })();
+    </script>
+  </head>
   <body>
     <div id="root"></div>
-      <script type="module" src="./index.tsx"></script>
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
