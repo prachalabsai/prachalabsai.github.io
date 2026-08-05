@@ -85,7 +85,7 @@ ${rssItems}
 </rss>
 `;
 
-const staticRoutes = ['/', '/charter', '/writing', '/work', '/pracha'];
+const staticRoutes = ['/', '/charter', '/ecology', '/writing', '/work', '/pracha'];
 const urls = [
   ...staticRoutes.map((r) => `${SITE}${r}`),
   ...posts.map((p) => `${SITE}/writing/${p.slug}`),

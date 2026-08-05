@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-route
 import { Layout } from './components/Layout';
 import { Home } from './pages/Home';
 import { Charter } from './pages/Charter';
+import { Ecology } from './pages/Ecology';
 import { Writing } from './pages/Writing';
 import { Post } from './pages/Post';
 import { Work } from './pages/Work';
@@ -25,6 +26,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="charter" element={<Charter />} />
+          <Route path="ecology" element={<Ecology />} />
           <Route path="writing" element={<Writing />} />
           <Route path="writing/:slug" element={<Post />} />
           <Route path="work" element={<Work />} />

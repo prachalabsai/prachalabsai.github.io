@@ -19,6 +19,7 @@ const NavItem = ({ to, label, onClick }: { to: string; label: string; onClick?: 
 
 const NAV = [
   { to: '/charter', label: 'Charter' },
+  { to: '/ecology', label: 'Ecology' },
   { to: '/writing', label: 'Writing' },
   { to: '/work', label: 'Work' },
   { to: '/pracha', label: 'Pracha' },

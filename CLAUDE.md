@@ -30,6 +30,9 @@ content, never redesigning.
   model access, it doesn't ship."
 - `content/now.ts` — the current season; editing this one file updates Home's This Season
   block and the stream grid's "active" markers.
+- `content/ecology.ts` — the Ecology canvas (`/ecology`): the downstream mapped as basin
+  layers (source → flows → ground → inhabitants → growth → climate) plus open-territory
+  possibilities. A thinking surface — add/merge/retire elements freely; it is meant to churn.
 - Theme: explicit toggle persists to localStorage; otherwise hour-based (07–19 light).
 - Routing: BrowserRouter + `public/404.html` spa-github-pages fallback; legacy `/tools`,
   `/canvas`, `/threads`, and `#/x` URLs redirect.
