@@ -1,8 +1,9 @@
 /*
-  The Ecology canvas — a living map of the downstream basin, rendered at /ecology.
-  This is deliberately a thinking surface: throw elements in, merge, retire, and
-  reshape them as clarity emerges. Growing this map = editing this file only.
-  Belongs to Stream 2 (The Ecology of Intelligence).
+  The Ecology canvas — a living map of the downstream ecosystem, rendered at
+  /ecology. A thinking surface: add, merge, and retire elements as clarity
+  emerges. Growing this map = editing this file only. Belongs to Stream 2.
+  Writing rule: every name and line must be instantly understandable — readers
+  should get what it is without decoding any metaphor.
 */
 
 export interface EcologyLayer {
@@ -16,47 +17,46 @@ export interface EcologyLayer {
 export const ECOLOGY_LAYERS: EcologyLayer[] = [
   {
     id: 'source',
-    name: 'The Source',
-    description: 'Where capability enters the basin — made by few, flowing to everyone.',
-    elements: [
-      'Frontier labs',
-      'Open-weight models',
-      'Model APIs',
-      'Research releases',
-    ],
-    question: 'What arrives next, and what does each arrival newly make possible?',
+    name: 'Where intelligence comes from',
+    description:
+      'A small number of labs build frontier models. Through APIs and open weights, that capability reaches everyone else.',
+    elements: ['Frontier labs', 'Open-weight models', 'Model APIs', 'Research releases'],
+    question: 'What is arriving next — and what does it make possible for the rest of us?',
   },
   {
-    id: 'flows',
-    name: 'The Flows',
-    description: 'How capability actually moves and spreads — the currents that decide who can use what.',
+    id: 'spread',
+    name: 'How it spreads',
+    description:
+      'The channels that decide who can actually use this capability, and at what cost.',
     elements: [
       'Falling inference costs',
       'Long context',
       'Tool use & computer use',
-      'Post-training access',
-      'Distillation & small models',
+      'Fine-tuning & post-training access',
+      'Small & distilled models',
     ],
-    question: 'Which flows are widening, and which are still dammed?',
+    question: 'Which channels are opening up, and which are still blocked?',
   },
   {
-    id: 'ground',
-    name: 'The Ground',
-    description: 'What gets built on and into — the working substrate between raw capability and real use.',
+    id: 'built',
+    name: 'What gets built on top',
+    description:
+      'The tools and systems that turn raw model capability into something dependable and useful.',
     elements: [
-      'Agent systems & harnesses',
+      'Agent systems',
       'Evaluation & verification',
       'Memory & context systems',
       'Data pipelines',
       'Orchestration',
       'Safety tooling',
     ],
-    question: 'How much capability sits unharvested behind missing or bad substrate?',
+    question: 'How much capability goes unused because these pieces are missing?',
   },
   {
-    id: 'inhabitants',
-    name: 'The Inhabitants',
-    description: 'Everyone who lives and works in the basin — value creation at every scale.',
+    id: 'people',
+    name: 'Who uses it',
+    description:
+      'People and organizations at every scale — each with different needs, budgets, and possibilities.',
     elements: [
       'Independent builders & researchers',
       'Data scientists',
@@ -65,42 +65,44 @@ export const ECOLOGY_LAYERS: EcologyLayer[] = [
       'Enterprises',
       'Public institutions & communities',
     ],
-    question: 'What does each inhabitant newly attempt that was impossible before?',
+    question: 'What can each of them attempt now that was impossible before?',
   },
   {
-    id: 'growth',
-    name: 'What Grows',
-    description: 'The value forms the basin produces when capability, substrate, and people meet.',
+    id: 'value',
+    name: 'What value emerges',
+    description:
+      'What all of this produces when capability, tools, and people come together.',
     elements: [
       'New products & services',
-      'New practices & crafts',
+      'New practices & professions',
       'Discoveries & new knowledge',
       'New markets & industries',
       'Education & capability building',
     ],
-    question: 'Which of these compound, and which evaporate with the next release?',
+    question: 'Which of these compound over time — and which disappear with the next model release?',
   },
   {
-    id: 'climate',
-    name: 'The Climate',
-    description: 'The conditions that decide whether the whole basin flourishes — the throughlines, operating at ecosystem scale.',
+    id: 'health',
+    name: 'What keeps it healthy',
+    description:
+      'The conditions that decide whether the whole ecosystem stays beneficial as people and AI interact more and more.',
     elements: [
       'Safety & coexistence',
       'Interpretability & trust',
       'Governance & norms',
       'Skill preservation',
-      'Distribution of benefit',
+      'Fair distribution of benefit',
     ],
-    question: 'What keeps abundance beneficial as humans and intelligence increasingly interact?',
+    question: 'How do we keep abundance safe, understandable, and fairly shared?',
   },
 ];
 
-/* Open territories — possibilities being actively thought about. Unfinished on purpose. */
+/* Directions being actively explored. Unfinished on purpose. */
 export const POSSIBILITIES: string[] = [
-  'One-person labs producing frontier-grade downstream research',
-  'Verified discovery — AI-assisted findings that pass real evidence standards',
-  'Small-business intelligence — what a family business does with abundant capability',
-  'Domain deltas — science, healthcare, education, agriculture reached by capability that never reached them before',
-  'New crafts — harness engineering, evaluation, and context design as professions',
-  'Coexistence patterns — interaction designs where human judgment and machine capability compound each other',
+  'One-person labs doing research that used to need a whole team',
+  'AI-assisted discoveries that hold up to real scientific standards',
+  'Small and family businesses using abundant intelligence without needing an AI team',
+  'Healthcare, education, and agriculture reached by capability that never reached them before',
+  'New professions: building agent systems, evaluating them, designing their context',
+  'Ways of working where human judgment and AI capability strengthen each other',
 ];

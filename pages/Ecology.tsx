@@ -15,11 +15,12 @@ export const Ecology: React.FC = () => {
           A living map of the downstream — its layers, elements, and possibilities.
         </p>
         <p className="font-serif text-lg leading-relaxed text-[var(--text-muted)]">
-          When intelligence becomes abundant, it doesn't land as a product — it forms an
-          ecosystem. This page maps that ecosystem the way you would map a river basin: what
-          enters it, how it moves, what it deposits, who lives in it, what grows, and the
-          climate that decides whether it flourishes. It is deliberately unfinished — elements
-          get added, merged, and retired as thinking sharpens.
+          When intelligence becomes abundant, it doesn't stay a product — it becomes an
+          ecosystem, like the one that forms around a river. This page maps that ecosystem in
+          six layers: where intelligence comes from, how it spreads, what gets built on top,
+          who uses it, what value emerges, and what keeps it healthy. It is a working map,
+          deliberately unfinished — things get added, merged, and removed as understanding
+          improves.
         </p>
       </section>
 
@@ -65,11 +66,11 @@ export const Ecology: React.FC = () => {
       {/* Possibilities */}
       <section className="mt-16">
         <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-accent mb-4">
-          Open territories
+          What's becoming possible
         </p>
         <p className="font-serif text-lg leading-relaxed text-[var(--text-muted)] mb-6">
-          Possibilities under active exploration — some will become experiments, case studies,
-          and proofs of value; others will be retired. That churn is the point.
+          Directions being actively explored. Some will become experiments, case studies, and
+          working proofs; others will be dropped. Both outcomes are progress.
         </p>
         <ul className="space-y-3">
           {POSSIBILITIES.map((p) => (
