@@ -57,6 +57,35 @@ export const STREAMS: Stream[] = [
   },
 ];
 
+/*
+  Throughlines — commitments that run across every stream rather than living
+  in one. Coexistence was the lab's original question; under the abundance
+  frame it grows into safety as a first-class design concern.
+*/
+export interface Throughline {
+  name: string;
+  note: string;
+}
+
+export const THROUGHLINES: Throughline[] = [
+  {
+    name: 'Discovery',
+    note: 'Finding new problems and new knowledge, not just producing new outputs.',
+  },
+  {
+    name: 'Self-improvement',
+    note: 'Systems that get better with evidence — and the limits and guardrails of letting them.',
+  },
+  {
+    name: 'Interpretability',
+    note: 'Understanding what models actually represent before trusting them with anything real.',
+  },
+  {
+    name: 'Safety & coexistence',
+    note: 'As intelligence and people increasingly interact, benefit and safety are one design problem, not two. This was the lab’s first question, and it runs through everything.',
+  },
+];
+
 /* Derived views — never hand-maintained. As posts and work declare their
    streams, these fill in and every stream-aware view updates itself. */
 export const postsForStream = (n: number): Post[] =>

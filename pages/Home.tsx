@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { StreamsGrid } from '../components/StreamsGrid';
+import { THROUGHLINES } from '../content/streams';
 import { PostListItem } from '../components/PostListItem';
 import { getAllPosts } from '../content/posts';
 import { WORK } from '../content/work';
@@ -67,6 +68,24 @@ export const Home: React.FC = () => {
           >
             Why these six →
           </Link>
+        </div>
+      </section>
+
+      {/* Throughlines */}
+      <section>
+        <Overline>Throughlines</Overline>
+        <p className="font-serif text-lg leading-relaxed text-[var(--text-muted)] mb-6">
+          Some commitments run across every stream rather than living in one.
+        </p>
+        <div className="space-y-4">
+          {THROUGHLINES.map((t) => (
+            <div key={t.name} className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
+              <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-accent shrink-0 sm:w-44">
+                {t.name}
+              </span>
+              <p className="font-serif text-lg leading-relaxed text-[var(--text-main)]">{t.note}</p>
+            </div>
+          ))}
         </div>
       </section>
 
