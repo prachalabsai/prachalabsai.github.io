@@ -51,6 +51,13 @@ npm run build      # prebuild feeds + vite build
 
 Deploy: push to `main` → `.github/workflows/deploy.yml` → GitHub Pages.
 
+## Workbench
+
+`workbench/` is the gitignored local staging area — thoughts, drafts, quick notes before
+anything publishes. Never commit it. Graduation path: drafts → `posts/`, work entries →
+`content/work.ts`, ecology elements → `content/ecology.ts`. Put new working notes there,
+not in the repo root.
+
 ## Recurring tasks
 
 - **Publish writing:** drop a `.md` in `posts/articles/` or `posts/journal/` with

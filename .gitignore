@@ -26,3 +26,6 @@ dist-ssr
 # Generated at build time
 public/feed.xml
 public/sitemap.xml
+
+# Local workbench — never committed
+workbench/
