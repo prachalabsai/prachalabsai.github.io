@@ -4,7 +4,9 @@
       "Bash(break)",
       "Bash(open http://localhost:3000)",
       "Bash(npm run *)",
-      "Bash(git commit -q -m ' *)"
+      "Bash(git commit -q -m ' *)",
+      "Bash(python3 -c ' *)",
+      "Bash(git commit -q -m 'Add gitignored workbench/ convention for local drafts *)"
     ]
   }
 }

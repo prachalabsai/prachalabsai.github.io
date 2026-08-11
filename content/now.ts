@@ -11,7 +11,8 @@ export interface Season {
 
 export const NOW: Season = {
   season: 'Late Summer 2026',
-  focus: 'Laying the source: the charter, the position essay, and the first agentic experiments.',
-  streams: [2, 6],
-  note: 'The map is drawn. This season converts it into the first artifacts — worked in public.',
+  focus:
+    'Measurement and control engineering for AI — building instruments for knowing what AI systems actually do.',
+  streams: [4, 6],
+  note: 'Agent systems are judged almost entirely by their outputs and rarely by how they got there. The work this season is an open-source library for analyzing agent traces statistically, starting with a simple experiment: can cheap structural signals reproduce expert failure annotations at a fraction of the cost of asking a model to read everything?',
 };
