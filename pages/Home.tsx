@@ -89,9 +89,9 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* This Season */}
+      {/* Working notes */}
       <section>
-        <Overline>This season</Overline>
+        <Overline>Working notes</Overline>
         <div className="border border-[var(--border-main)] border-l-2 border-l-accent bg-[var(--accent-tint)] p-6">
           <p className="font-mono text-xs text-accent-soft mb-2">{NOW.season}</p>
           <p className="font-serif text-xl leading-relaxed text-[var(--text-main)] mb-2">
